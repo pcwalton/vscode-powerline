@@ -1,0 +1,14 @@
+footer.statusbar {
+    --powerline-plain-fg: #93a1a1;
+    --powerline-plain-bg: #073642;
+    --powerline-mode-fg: #fdf6e3;
+    --powerline-normal-bg: #586e75;
+    --powerline-insert-bg: #b58900;
+    --powerline-replace-bg: #dc322f;
+    --powerline-visual-bg: #859900;
+    --powerline-mode-weight: bold;
+    --powerline-second-segment-fg: rgba(255, 255, 255, 0.5);
+    --powerline-second-segment-bg-filter: brightness(50%);
+    --powerline-separator: #586e75;
+    --powerline-vim-command-line: #eee8d5;
+}
