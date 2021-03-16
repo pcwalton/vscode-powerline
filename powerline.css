@@ -1,3 +1,9 @@
+/*
+ * vscode-powerline/powerline.css
+ *
+ * Powerline for VS Code, enhanced for VSCodeVim
+ */
+
 footer.statusbar {
      background-color: var(--powerline-normal-bg) !important;
 }

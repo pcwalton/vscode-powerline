@@ -1,3 +1,9 @@
+/*
+ * vscode-powerline/themes/solarized-dark.css
+ *
+ * Solarized Dark theme, Powerline for VS Code
+ */
+
 footer.statusbar {
     --powerline-plain-fg: #93a1a1;
     --powerline-plain-bg: #073642;
