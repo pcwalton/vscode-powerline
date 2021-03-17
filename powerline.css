@@ -358,7 +358,9 @@ footer.statusbar {
 }
 
 /* Nice-to-have for VSCodeVim status bar */
- .statusbar-item#vscodevim\.vim[aria-label^=":"] {
+ .statusbar-item#vscodevim\.vim[aria-label^=":"],
+ .statusbar-item#vscodevim\.vim[aria-label^="/"],
+ .statusbar-item#vscodevim\.vim[aria-label^="?"] {
     font-family: "MesloLGS NF", Consolas, monospace;
     color: var(--powerline-vim-command-line);
 }
