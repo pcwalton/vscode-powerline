@@ -14,9 +14,11 @@ footer.statusbar {
     position: relative;
     background: transparent;
 }
+.statusbar-item *, .statusbar-item:before, .statusbar-item:after {
+    z-index: 1;
+}
 .statusbar-item > :first-child {
     position: relative;
-    z-index: 2;
 }
 /* second from left and on */
 .statusbar-item.left > :first-child {
@@ -30,8 +32,12 @@ footer.statusbar {
 .statusbar-item.right.last-visible-item > :first-child {
     margin: 0 !important;
 }
-/* second from right and on */
+/* second from right */
 .statusbar-item.right.last-visible-item ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]) > :first-child {
+    margin: 0 -10px 0 0 !important; /* -10px instead of -11px to fix rounding error */
+}
+/* third from right and on */
+.statusbar-item.right.last-visible-item ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]) ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]) > :first-child {
     margin: 0 -11px 0 0 !important;
 }
 /* first from right */
@@ -106,7 +112,6 @@ footer.statusbar {
     border-top: solid transparent 11px;
     border-right: solid transparent 11px;
     border-bottom: solid transparent 11px;
-    z-index: 2;
 }
 /* second from right: left triangle */
 .statusbar-item.right.last-visible-item ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]):after {
@@ -121,7 +126,6 @@ footer.statusbar {
     border-top: solid transparent 11px;
     border-right: solid rgba(0, 0, 0, 0.5) 11px;
     border-bottom: solid transparent 11px;
-    z-index: 2;
 }
 /* second from left: background */
 .statusbar-item.left.first-visible-item a {
@@ -170,10 +174,9 @@ footer.statusbar {
     width: 22px;
     box-sizing: border-box;
     border-left: solid var(--powerline-plain-bg) 11px;
-    border-top: solid transparent 11px;
-    border-right: solid transparent 11px;
-    border-bottom: solid transparent 11px;
-    z-index: 2;
+    border-top: solid var(--powerline-plain-bg-hl) 11px;
+    border-right: solid var(--powerline-plain-bg-hl) 11px;
+    border-bottom: solid var(--powerline-plain-bg-hl) 11px;
 }
 /* third from right: left triangle */
 .statusbar-item.right.last-visible-item ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]) ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]):after {
@@ -184,11 +187,10 @@ footer.statusbar {
     height: 22px;
     width: 22px;
     box-sizing: border-box;
-    border-left: solid transparent 11px;
-    border-top: solid transparent 11px;
+    border-left: solid var(--powerline-plain-bg-hl) 11px;
+    border-top: solid var(--powerline-plain-bg-hl) 11px;
     border-right: solid var(--powerline-plain-bg) 11px;
-    border-bottom: solid transparent 11px;
-    z-index: 2;
+    border-bottom: solid var(--powerline-plain-bg-hl) 11px;
 }
 /* last if VSCodeVim status/command: right triangle */
 .statusbar-item.left.first-visible-item ~ .statusbar-item.left#vscodevim\.vim:not([aria-label^="-- "]):after {
@@ -200,7 +202,6 @@ footer.statusbar {
     width: 22px;
     box-sizing: border-box;
     border: solid var(--powerline-plain-bg) 11px;
-    z-index: 2;
 }
 /* second from left (hovered) */
 .statusbar-item.left.first-visible-item:hover a {
@@ -255,18 +256,15 @@ footer.statusbar {
     width: 0;
 }
 .statusbar-item.first-visible-item {
-    z-index: 1;
     position: relative;
     padding-left: 0;
 }
  .statusbar-item.first-visible-item ~ .statusbar-item.left:not(#vscodevim\.vim) {
     position: relative;
-    z-index: 1;
 }
 /* cover up background on left side */
 .left-items:after {
     flex-grow: 1;
-    z-index: 1;
     content: " ";
     display: block;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 11px, var(--powerline-plain-bg) 11px, var(--powerline-plain-bg));
@@ -276,11 +274,11 @@ footer.statusbar {
     border-right: solid var(--powerline-plain-bg) 11px;
     border-bottom: solid var(--powerline-plain-bg) 11px;
     margin-left: -21px;
+    z-index: 1;
 }
 /* cover up background on right side */
 .right-items:after {
     flex-grow: 1;
-    z-index: 1;
     content: " ";
     display: block;
     background-image: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 11px, var(--powerline-plain-bg) 11px, var(--powerline-plain-bg));
@@ -290,6 +288,7 @@ footer.statusbar {
     border-right: solid transparent 11px;
     border-bottom: solid var(--powerline-plain-bg) 11px;
     margin-right: -21px;
+    z-index: 1;
 }
  .statusbar-item#vscodevim\.vim[aria-label^="--"] {
     order: -1;
@@ -298,11 +297,12 @@ footer.statusbar {
     position: absolute;
     content: "";
     background: inherit;
-    z-index: 0;
     top: 0;
     left: 100%;
     width: 10000px;
     height: 100px;
+    z-index: 0;
+    pointer-events: none;
 }
  .statusbar-item#vscodevim\.vim[aria-label="-- NORMAL --"], .statusbar-item#vscodevim\.vim[aria-label="-- INSERT --"], .statusbar-item#vscodevim\.vim[aria-label="-- REPLACE --"], .statusbar-item#vscodevim\.vim[aria-label="-- VISUAL --"], .statusbar-item#vscodevim\.vim[aria-label="-- VISUAL LINE --"], .statusbar-item#vscodevim\.vim[aria-label="-- VISUAL BLOCK --"] {
     font-size: 0;
