@@ -7,6 +7,7 @@
 footer.statusbar {
     --powerline-plain-fg: #93a1a1;
     --powerline-plain-bg: #073642;
+    --powerline-plain-bg-hl :#586e75;
     --powerline-mode-fg: #fdf6e3;
     --powerline-normal-bg: #586e75;
     --powerline-insert-bg: #b58900;
