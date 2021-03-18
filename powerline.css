@@ -304,13 +304,17 @@ footer.statusbar {
     z-index: 0;
     pointer-events: none;
 }
- .statusbar-item#vscodevim\.vim[aria-label="-- NORMAL --"], .statusbar-item#vscodevim\.vim[aria-label="-- INSERT --"], .statusbar-item#vscodevim\.vim[aria-label="-- REPLACE --"], .statusbar-item#vscodevim\.vim[aria-label="-- VISUAL --"], .statusbar-item#vscodevim\.vim[aria-label="-- VISUAL LINE --"], .statusbar-item#vscodevim\.vim[aria-label="-- VISUAL BLOCK --"] {
-    font-size: 0;
-}
- .statusbar-item#vscodevim\.vim[aria-label^="-- NORMAL"]:before, .statusbar-item#vscodevim\.vim[aria-label^="-- INSERT"]:before, .statusbar-item#vscodevim\.vim[aria-label^="-- REPLACE"]:before, .statusbar-item#vscodevim\.vim[aria-label^="-- VISUAL"]:before {
+ .statusbar-item#vscodevim\.vim[aria-label^="--"] {
     font-size: 12px;
     padding: 0 5px 0 9px;
     font-weight: var(--powerline-mode-weight);
+}
+ .statusbar-item#vscodevim\.vim[aria-label^="--"] a {
+     margin: 0 !important;
+     padding: 0 !important;
+ }
+ .statusbar-item#vscodevim\.vim[aria-label="-- NORMAL --"], .statusbar-item#vscodevim\.vim[aria-label="-- INSERT --"], .statusbar-item#vscodevim\.vim[aria-label="-- REPLACE --"], .statusbar-item#vscodevim\.vim[aria-label="-- VISUAL --"], .statusbar-item#vscodevim\.vim[aria-label="-- VISUAL LINE --"], .statusbar-item#vscodevim\.vim[aria-label="-- VISUAL BLOCK --"] {
+    font-size: 0;
 }
  .statusbar-item#vscodevim\.vim[aria-label^="-- NORMAL"] {
     color: var(--powerline-mode-fg);
@@ -330,21 +334,27 @@ footer.statusbar {
 }
  .statusbar-item#vscodevim\.vim[aria-label="-- NORMAL --"]:before {
     content: "NORMAL";
+    font-size: 12px;
 }
 .statusbar-item#vscodevim\.vim[aria-label="-- INSERT --"]:before {
     content: "INSERT";
+    font-size: 12px;
 }
 .statusbar-item#vscodevim\.vim[aria-label="-- REPLACE --"]:before {
     content: "REPLACE";
+    font-size: 12px;
 }
 .statusbar-item#vscodevim\.vim[aria-label="-- VISUAL --"]:before {
     content: "VISUAL";
+    font-size: 12px;
 }
 .statusbar-item#vscodevim\.vim[aria-label="-- VISUAL LINE --"]:before {
     content: "V-LINE";
+    font-size: 12px;
 }
 .statusbar-item#vscodevim\.vim[aria-label="-- VISUAL BLOCK --"]:before {
     content: "V-BLOCK";
+    font-size: 12px;
 }
 .statusbar-item.left.first-visible-item,
 .statusbar-item.right:not([aria-hidden]):not([aria-label=""]) ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]) {

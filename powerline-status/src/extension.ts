@@ -2,13 +2,13 @@
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
 
-let statusBarItem: vscode.StatusBarItem;
+let positionStatusBarItem: vscode.StatusBarItem;
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
-	statusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right, -100);
-	context.subscriptions.push(statusBarItem);
+	positionStatusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right, -100);
+	context.subscriptions.push(positionStatusBarItem);
 
 	context.subscriptions.push(vscode.window.onDidChangeActiveTextEditor(updateStatusBarItem));
 	context.subscriptions.push(vscode.window.onDidChangeTextEditorSelection(updateStatusBarItem));
@@ -21,7 +21,7 @@ export function deactivate() { }
 function updateStatusBarItem() {
 	const editor = vscode.window.activeTextEditor;
 	if (editor == null) {
-		statusBarItem.hide();
+		positionStatusBarItem.hide();
 		return;
 	}
 
@@ -30,6 +30,6 @@ function updateStatusBarItem() {
 	const line = "" + (pos.line + 1) + "/" + (editor.document.lineCount) + " ㏑";
 	const column = "" + (pos.character + 1);
 	const label = percent + " " + line + " : " + column;
-	statusBarItem.text = label;
-	statusBarItem.show();
+	positionStatusBarItem.text = label;
+	positionStatusBarItem.show();
 }
