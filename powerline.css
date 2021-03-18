@@ -25,29 +25,33 @@ footer.statusbar {
     margin: 0 0 0 -11px !important;
 }
 /* first from right */
-.statusbar-item.right.last-visible-item {
+.statusbar-item.right:not([aria-hidden]):not([aria-label=""]) {
     padding-right: 5px !important;
 }
 /* first from right */
-.statusbar-item.right.last-visible-item > :first-child {
-    margin: 0 !important;
+.statusbar-item.right:not([aria-hidden]):not([aria-label=""]) > :first-child {
+    margin: 0 0 0 22px !important;
 }
 /* second from right */
-.statusbar-item.right.last-visible-item ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]) > :first-child {
-    margin: 0 -10px 0 0 !important; /* -10px instead of -11px to fix rounding error */
+.statusbar-item.right:not([aria-hidden]):not([aria-label=""]) ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]) > :first-child {
+    margin: 0 -11px 0 0 !important; /* -10px instead of -11px to fix rounding error */
 }
 /* third from right and on */
-.statusbar-item.right.last-visible-item ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]) ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]) > :first-child {
+.statusbar-item.right:not([aria-hidden]):not([aria-label=""]) ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]) ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]) > :first-child {
     margin: 0 -11px 0 0 !important;
 }
 /* first from right */
-.statusbar-item.right.last-visible-item {
+.statusbar-item.right:not([aria-hidden]):not([aria-label=""]) {
     color: var(--powerline-mode-fg);
 }
 /* second from left, second from right */
 .statusbar-item.left.first-visible-item,
-.statusbar-item.right.last-visible-item ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]) {
+.statusbar-item.right:not([aria-hidden]):not([aria-label=""]) ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]) {
     padding: 0 22px !important;
+}
+/* second from right */
+.statusbar-item.right:not([aria-hidden]):not([aria-label=""]) ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]) {
+    margin-right: -22px !important;
 }
 /* third from left */
 /* TODO(pcwalton): fix hidden logic */
@@ -57,7 +61,7 @@ footer.statusbar {
     padding: 0 22px !important;
 }
 /* third from right */
- .statusbar-item.right.last-visible-item ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]) ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]) {
+ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]) ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]) ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]) {
     margin-right: -22px !important;
     padding: 0 22px !important;
 }
@@ -68,7 +72,7 @@ footer.statusbar {
     margin-left: -21px !important;
 }
 /* fourth from right */
-.statusbar-item.right.last-visible-item ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]) ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]) ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]) {
+.statusbar-item.right:not([aria-hidden]):not([aria-label=""]) ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]) ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]) ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]) {
     margin-right: -21px !important;
 }
 /* second from left: left triangle */
@@ -86,18 +90,18 @@ footer.statusbar {
     border-bottom: solid rgba(0, 0, 0, 0.5) 11px;
 }
 /* second from right: right triangle */
-.statusbar-item.right.last-visible-item ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]):before {
+.statusbar-item.right:not([aria-hidden]):not([aria-label=""]) ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]):before {
     content: "";
     position: absolute;
-    top: 0;
+    top: 0px;
     right: 0;
     height: 22px;
-    width: 22px;
+    left: 22px;
     box-sizing: border-box;
     border-left: solid rgba(0, 0, 0, 0.5) 11px;
     border-top: solid rgba(0, 0, 0, 0.5) 11px;
     border-right: solid transparent 11px;
-    border-bottom: solid rgba(0, 0, 0, 0.5) 11px;
+    border-bottom: solid rgba(0, 0, 0, 0.5) 12px;    /* 12px avoids a rounding error??? */
 }
 /* second from left: right triangle */
 .statusbar-item.left.first-visible-item:after {
@@ -114,7 +118,7 @@ footer.statusbar {
     border-bottom: solid transparent 11px;
 }
 /* second from right: left triangle */
-.statusbar-item.right.last-visible-item ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]):after {
+.statusbar-item.right:not([aria-hidden]):not([aria-label=""]) ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]):after {
     content: "";
     position: absolute;
     top: 0;
@@ -130,10 +134,6 @@ footer.statusbar {
 /* second from left: background */
 .statusbar-item.left.first-visible-item a {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 11px, rgba(0, 0, 0, 0.5) 11px, rgba(0, 0, 0, 0.5));
-}
-/* second from right: background */
-.statusbar-item.right.last-visible-item ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]) a {
-    background-image: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 10px, rgba(0, 0, 0, 0.5) 10px, rgba(0, 0, 0, 0.5));
 }
 /* third from left: left triangle */
 .statusbar-item.left.first-visible-item ~ .statusbar-item.left:not(#vscodevim\.vim):before,
@@ -151,11 +151,12 @@ footer.statusbar {
     border-bottom: solid var(--powerline-plain-bg) 11px;
 }
 /* third from right: right triangle */
-.statusbar-item.right.last-visible-item ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]) ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]):before {
+.statusbar-item.right:not([aria-hidden]):not([aria-label=""]) ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]) ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]):before {
     content: "";
     position: absolute;
     top: 0;
     right: 0;
+    left: auto;
     height: 22px;
     width: 22px;
     box-sizing: border-box;
@@ -179,7 +180,7 @@ footer.statusbar {
     border-bottom: solid var(--powerline-plain-bg-hl) 11px;
 }
 /* third from right: left triangle */
-.statusbar-item.right.last-visible-item ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]) ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]):after {
+.statusbar-item.right:not([aria-hidden]):not([aria-label=""]) ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]) ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]):after {
     content: "";
     position: absolute;
     top: 0;
@@ -208,7 +209,7 @@ footer.statusbar {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 11px, var(--powerline-plain-bg-hl) 11px, var(--powerline-plain-bg-hl));
 }
 /* second from right (hovered) */
-.statusbar-item.right.last-visible-item ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]):hover a {
+.statusbar-item.right:not([aria-hidden]):not([aria-label=""]) ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]):hover a {
     background-image: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 11px, var(--powerline-plain-bg-hl) 11px, var(--powerline-plain-bg-hl));
 }
 /* third and on from left (hovered) */
@@ -217,7 +218,7 @@ footer.statusbar {
     background-color: var(--powerline-plain-bg-hl) !important;
 }
 /* third and on from right (hovered) */
-.statusbar-item.right.last-visible-item ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]) ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]):hover a {
+.statusbar-item.right:not([aria-hidden]):not([aria-label=""]) ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]) ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]):hover a {
     background-image: none;
     background-color: var(--powerline-plain-bg-hl) !important;
 }
@@ -229,7 +230,7 @@ footer.statusbar {
     border-bottom-color: var(--powerline-plain-bg-hl);
 }
 /* second and on from right (hovered): left triangle */
-.statusbar-item.right.last-visible-item ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]):hover:before {
+.statusbar-item.right:not([aria-hidden]):not([aria-label=""]) ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]):hover:before {
     border-top-color: var(--powerline-plain-bg-hl) !important;
     border-left-color: var(--powerline-plain-bg-hl) !important;
     border-bottom-color: var(--powerline-plain-bg-hl) !important;
@@ -240,13 +241,13 @@ footer.statusbar {
     border-left-color: var(--powerline-plain-bg-hl);
 }
 /* second from right and on (hovered): right triangle */
-.statusbar-item.right.last-visible-item ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]):hover:after {
+.statusbar-item.right:not([aria-hidden]):not([aria-label=""]) ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]):hover:after {
     border-right-color: var(--powerline-plain-bg-hl) !important;
 }
 /* third from left and third from right: background */
 .statusbar-item.left.first-visible-item ~ .statusbar-item.left:not(#vscodevim\.vim) a,
 .statusbar-item.left.first-visible-item ~ .statusbar-item.left:not([aria-label^="-- "]) a,
-.statusbar-item.right.last-visible-item ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]) ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]) a {
+.statusbar-item.right:not([aria-hidden]):not([aria-label=""]) ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]) ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]) a {
     background-color: var(--powerline-plain-bg);
     background-image: none;
 }
@@ -278,7 +279,6 @@ footer.statusbar {
 }
 /* cover up background on right side */
 .right-items:after {
-    flex-grow: 1;
     content: " ";
     display: block;
     background-image: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 11px, var(--powerline-plain-bg) 11px, var(--powerline-plain-bg));
@@ -331,27 +331,27 @@ footer.statusbar {
  .statusbar-item#vscodevim\.vim[aria-label="-- NORMAL --"]:before {
     content: "NORMAL";
 }
- .statusbar-item#vscodevim\.vim[aria-label="-- INSERT --"]:before {
+.statusbar-item#vscodevim\.vim[aria-label="-- INSERT --"]:before {
     content: "INSERT";
 }
- .statusbar-item#vscodevim\.vim[aria-label="-- REPLACE --"]:before {
+.statusbar-item#vscodevim\.vim[aria-label="-- REPLACE --"]:before {
     content: "REPLACE";
 }
- .statusbar-item#vscodevim\.vim[aria-label="-- VISUAL --"]:before {
+.statusbar-item#vscodevim\.vim[aria-label="-- VISUAL --"]:before {
     content: "VISUAL";
 }
- .statusbar-item#vscodevim\.vim[aria-label="-- VISUAL LINE --"]:before {
+.statusbar-item#vscodevim\.vim[aria-label="-- VISUAL LINE --"]:before {
     content: "V-LINE";
 }
- .statusbar-item#vscodevim\.vim[aria-label="-- VISUAL BLOCK --"]:before {
+.statusbar-item#vscodevim\.vim[aria-label="-- VISUAL BLOCK --"]:before {
     content: "V-BLOCK";
 }
- .statusbar-item.left.first-visible-item,
- .statusbar-item.right.last-visible-item ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]) {
+.statusbar-item.left.first-visible-item,
+.statusbar-item.right:not([aria-hidden]):not([aria-label=""]) ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]) {
     color: var(--powerline-second-segment-fg);
 }
 .statusbar-item.left.first-visible-item ~ .statusbar-item.left:not([aria-hidden]),
-.statusbar-item.right.last-visible-item ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]) ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]),
+.statusbar-item.right:not([aria-hidden]):not([aria-label=""]) ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]) ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]),
 .left-items:after {
     color: var(--powerline-plain-fg);
 }
