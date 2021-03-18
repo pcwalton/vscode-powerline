@@ -1,0 +1,6 @@
+powerline-status/out
+powerline-status/.vscode
+powerline-status/.vscode-test
+powerline-status/node_modules
+powerline-status/*.vsix
+
