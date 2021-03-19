@@ -6,16 +6,17 @@
 
 /* Themes */
 
-/* onehalf dark */
+/* onedark, onehalf dark */
+div.zhuangtongfa-material-theme-themes-OneDark-Pro-json footer.statusbar,
 div.quandinh-onehalf-dark-themes-onehalf-dark-color-theme-json footer.statusbar {
     --powerline-mode-fg: #282c34;
     --powerline-normal-bg: #98c379;
     --powerline-insert-bg: #61afef;
     --powerline-replace-bg: #e06c75;
     --powerline-visual-bg: #e5c07b;
-    --powerline-inner-fg: #dcdfe4;
+    --powerline-inner-fg: #ABB2BF;
     --powerline-inner-bg: #313640;
-    --powerline-inner-bg-hl :#5d677a;
+    --powerline-inner-bg-hl :#3E4452;
     --powerline-mode-weight: bold;
     --powerline-second-segment-fg: #dcdfe4;
     --powerline-separator: rgba(0, 0, 0, 0.25);
@@ -409,10 +410,10 @@ footer.statusbar {
 }
 
 /* Nice-to-have for VSCodeVim status bar */
- .statusbar-item.left#vscodevim\.vim[aria-label^=":"],
- .statusbar-item.left#vscodevim\.vim[aria-label^="/"],
- .statusbar-item.left#vscodevim\.vim[aria-label^="?"],
- .statusbar-item.right#vscodevim\.vim {
+.statusbar-item.left#vscodevim\.vim[aria-label^=":"],
+.statusbar-item.left#vscodevim\.vim[aria-label^="/"],
+.statusbar-item.left#vscodevim\.vim[aria-label^="?"],
+.statusbar-item.right#vscodevim\.vim {
     font-family: "MesloLGS NF", Consolas, monospace;
     color: var(--powerline-vim-command-line);
 }
