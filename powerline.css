@@ -40,7 +40,7 @@ div.quandinh-onehalf-dark-themes-onehalf-dark-color-theme-json footer.statusbar 
 }
 
 /* Solarized Dark */
-div.solarized-dark-color-theme-json footer.statusbar {
+div.vscode-theme-solarized-dark-themes-solarized-dark-color-theme-json footer.statusbar {
     --powerline-inner-fg: #93a1a1;
     --powerline-inner-bg: #073642;
     --powerline-inner-bg-hl :#586e75;
