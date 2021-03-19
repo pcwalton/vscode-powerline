@@ -44,13 +44,17 @@ $ vsce package
 
 7. (Optional) To remove the "[Unsupported]" string in the title bar, install the [Fix VSCode Checksums] extension and follow its instructions.
 
+## Themes
+
+VS Code Powerline comes with support for the onedark and Solarized Dark themes. It falls back to the Airline dark theme if neither is in use. If you want to add more or customize the colors in other ways, just edit the CSS variables at the top of `powerline.css`.
+
 ## Screenshot
 
 ![Screenshot](https://i.imgur.com/Ci2ewLt.png)
 
 ## Future work
 
-I'll upload the line and column number indicator to the marketplace once I've tested it some more.
+I'll upload the line and column number indicator to the Marketplace once I've tested it some more.
 
 [Powerline]: https://github.com/powerline/powerline
 

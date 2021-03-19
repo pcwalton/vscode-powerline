@@ -6,6 +6,22 @@
 
 /* Themes */
 
+/* airline default "dark" theme */
+body {
+    --powerline-mode-fg: #00005f;
+    --powerline-normal-bg: #dfff00;
+    --powerline-insert-bg: #00dfff;
+    --powerline-replace-bg: #af0000;
+    --powerline-visual-bg: #ffaf00;
+    --powerline-inner-fg: #ffffff;
+    --powerline-inner-bg: #202020;
+    --powerline-inner-bg-hl: #303030;
+    --powerline-second-segment-fg: #ffffff;
+    --powerline-separator: #303030;
+    --powerline-vim-command-line: #ffffff;
+    --powerline-mode-weight: bold;
+}
+
 /* onedark, onehalf dark */
 div.zhuangtongfa-material-theme-themes-OneDark-Pro-json footer.statusbar,
 div.quandinh-onehalf-dark-themes-onehalf-dark-color-theme-json footer.statusbar {
