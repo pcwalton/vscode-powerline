@@ -136,7 +136,7 @@ footer.statusbar {
     top: -1px;
     left: 0;
     height: 22px;
-    width: 22px;
+    right: 22px;
     box-sizing: border-box;
     border-left: solid transparent 11px;
     border-top: solid rgba(0, 0, 0, 0.5) 12px;
@@ -184,10 +184,6 @@ footer.statusbar {
     border-top: solid transparent 12px;
     border-right: solid rgba(0, 0, 0, 0.5) 11px;
     border-bottom: solid transparent 12px;
-}
-/* second from left: background */
-.statusbar-item.left.first-visible-item a {
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 11px, rgba(0, 0, 0, 0.5) 11px, rgba(0, 0, 0, 0.5));
 }
 /* third from left: left triangle */
 .statusbar-item.left.first-visible-item ~ .statusbar-item.left:not(#vscodevim\.vim):before,
