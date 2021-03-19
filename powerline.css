@@ -22,6 +22,22 @@ body {
     --powerline-mode-weight: bold;
 }
 
+/* Nord */
+div.arcticicestudio-nord-visual-studio-code-themes-nord-color-theme-json footer.statusbar {
+    --powerline-mode-fg: #3b4252;
+    --powerline-normal-bg: #a3be8c;
+    --powerline-insert-bg: #88c0d0;
+    --powerline-replace-bg: #bf616a;
+    --powerline-visual-bg: #ebcb8b;
+    --powerline-inner-fg: #81a1c1;
+    --powerline-inner-bg: #3b4252;
+    --powerline-inner-bg-hl: #434c5e;
+    --powerline-second-segment-fg: #eceff4;
+    --powerline-separator: #434c5e;
+    --powerline-vim-command-line: #eceff4;
+    --powerline-mode-weight: bold;
+}
+
 /* onedark, onehalf dark */
 div.zhuangtongfa-material-theme-themes-OneDark-Pro-json footer.statusbar,
 div.quandinh-onehalf-dark-themes-onehalf-dark-color-theme-json footer.statusbar {
@@ -32,7 +48,7 @@ div.quandinh-onehalf-dark-themes-onehalf-dark-color-theme-json footer.statusbar 
     --powerline-visual-bg: #e5c07b;
     --powerline-inner-fg: #ABB2BF;
     --powerline-inner-bg: #313640;
-    --powerline-inner-bg-hl :#3E4452;
+    --powerline-inner-bg-hl: #3E4452;
     --powerline-mode-weight: bold;
     --powerline-second-segment-fg: #dcdfe4;
     --powerline-separator: rgba(0, 0, 0, 0.25);
@@ -43,7 +59,7 @@ div.quandinh-onehalf-dark-themes-onehalf-dark-color-theme-json footer.statusbar 
 div.vscode-theme-solarized-dark-themes-solarized-dark-color-theme-json footer.statusbar {
     --powerline-inner-fg: #93a1a1;
     --powerline-inner-bg: #073642;
-    --powerline-inner-bg-hl :#586e75;
+    --powerline-inner-bg-hl: #586e75;
     --powerline-mode-fg: #fdf6e3;
     --powerline-normal-bg: #586e75;
     --powerline-insert-bg: #b58900;
