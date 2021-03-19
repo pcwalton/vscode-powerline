@@ -1,5 +1,7 @@
 # Powerline for Visual Studio Code
 
+![Powerline](https://i.imgur.com/SWGo8aC.png)
+
 This is a port of the popular [Powerline] Vim theme for Visual Studio Code. I created it because I realized how much I missed Powerline after going back to command line Vim for a bit.
 
 VS Code Powerline consists of two subprojects, each of which is optional:
@@ -16,7 +18,7 @@ This project is designed and tested with the [VSCodeVim] extension, but it can b
 
 1. Clone the project on GitHub.
 
-2. Install the [Custom CSS and JS Loader] extension from the Visual Studio Code Marketplace.
+2. Install the [Custom CSS and JS Loader] extension from the Visual Studio Code Marketplace. Make sure to follow its instructions so that VS Code has permission to patch itself.
 
 3. Add the following line to your VS Code `settings.json`, replacing `/path/to/vscode-powerline` with the full path to the directory you cloned the project to:
 
@@ -41,6 +43,10 @@ $ vsce package
 6. Restart Visual Studio Code.
 
 7. (Optional) To remove the "[Unsupported]" string in the title bar, install the [Fix VSCode Checksums] extension and follow its instructions.
+
+## Screenshot
+
+![Screenshot](https://i.imgur.com/Ci2ewLt.png)
 
 ## Future work
 
