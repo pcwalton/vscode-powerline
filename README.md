@@ -2,7 +2,7 @@
 
 ![Powerline](https://i.imgur.com/SWGo8aC.png)
 
-This is a port of the popular [Powerline] Vim theme for Visual Studio Code. I created it because I realized how much I missed Powerline after going back to command line Vim for a bit.
+This is a port of the popular [Powerline] Vim theme to Visual Studio Code. I created it because I realized how much I missed Powerline after going back to command line Vim for a bit.
 
 VS Code Powerline consists of two subprojects, each of which is optional:
 
