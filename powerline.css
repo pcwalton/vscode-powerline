@@ -25,15 +25,15 @@ body {
 /* Nord */
 div.arcticicestudio-nord-visual-studio-code-themes-nord-color-theme-json footer.statusbar {
     --powerline-mode-fg: #3b4252;
-    --powerline-normal-bg: #a3be8c;
-    --powerline-insert-bg: #88c0d0;
-    --powerline-replace-bg: #bf616a;
-    --powerline-visual-bg: #ebcb8b;
-    --powerline-inner-fg: #81a1c1;
+    --powerline-normal-bg: #88c0d0;
+    --powerline-insert-bg: #eceff4;
+    --powerline-replace-bg: #a3be8c;
+    --powerline-visual-bg: #8fbcbb;
+    --powerline-inner-fg: #d8dee9;
     --powerline-inner-bg: #3b4252;
     --powerline-inner-bg-hl: #4c566a;
-    --powerline-second-segment-fg: #eceff4;
-    --powerline-separator: #5e81ac;
+    --powerline-second-segment-fg: #e5e9f0;
+    --powerline-separator: rgba(0, 0, 0, 0.3);
     --powerline-vim-command-line: #eceff4;
     --powerline-mode-weight: bold;
 }
@@ -361,10 +361,13 @@ footer.statusbar {
     margin-right: -21px;
     z-index: 1;
 }
- .statusbar-item#vscodevim\.vim[aria-label^="--"] {
+
+/* VSCodeVim mode indicator */
+
+.statusbar-item#vscodevim\.vim[aria-label^="--"] {
     order: -1;
 }
- .statusbar-item#vscodevim\.vim[aria-label^="--"]:after {
+.statusbar-item#vscodevim\.vim[aria-label^="--"]:after {
     position: absolute;
     content: "";
     background: inherit;
@@ -375,35 +378,35 @@ footer.statusbar {
     z-index: 0;
     pointer-events: none;
 }
- .statusbar-item#vscodevim\.vim[aria-label^="--"] {
+.statusbar-item#vscodevim\.vim[aria-label^="--"] {
     font-size: 12px;
     padding: 0 5px 0 9px;
     font-weight: var(--powerline-mode-weight);
 }
- .statusbar-item#vscodevim\.vim[aria-label^="--"] a {
+.statusbar-item#vscodevim\.vim[aria-label^="--"] a {
      margin: 0 !important;
      padding: 0 !important;
  }
- .statusbar-item#vscodevim\.vim[aria-label="-- NORMAL --"], .statusbar-item#vscodevim\.vim[aria-label="-- INSERT --"], .statusbar-item#vscodevim\.vim[aria-label="-- REPLACE --"], .statusbar-item#vscodevim\.vim[aria-label="-- VISUAL --"], .statusbar-item#vscodevim\.vim[aria-label="-- VISUAL LINE --"], .statusbar-item#vscodevim\.vim[aria-label="-- VISUAL BLOCK --"] {
+.statusbar-item#vscodevim\.vim[aria-label="-- NORMAL --"], .statusbar-item#vscodevim\.vim[aria-label="-- INSERT --"], .statusbar-item#vscodevim\.vim[aria-label="-- REPLACE --"], .statusbar-item#vscodevim\.vim[aria-label="-- VISUAL --"], .statusbar-item#vscodevim\.vim[aria-label="-- VISUAL LINE --"], .statusbar-item#vscodevim\.vim[aria-label="-- VISUAL BLOCK --"] {
     font-size: 0;
 }
- .statusbar-item#vscodevim\.vim[aria-label^="-- NORMAL"] {
+.statusbar-item#vscodevim\.vim[aria-label^="-- NORMAL"] {
     color: var(--powerline-mode-fg);
     background: transparent;
 }
- .statusbar-item#vscodevim\.vim[aria-label^="-- INSERT"] {
+.statusbar-item#vscodevim\.vim[aria-label^="-- INSERT"] {
     color: var(--powerline-mode-fg);
     background: var(--powerline-insert-bg);
 }
- .statusbar-item#vscodevim\.vim[aria-label^="-- REPLACE"] {
+.statusbar-item#vscodevim\.vim[aria-label^="-- REPLACE"] {
     color: var(--powerline-mode-fg);
     background: var(--powerline-replace-bg);
 }
- .statusbar-item#vscodevim\.vim[aria-label^="-- VISUAL"] {
+.statusbar-item#vscodevim\.vim[aria-label^="-- VISUAL"] {
     color: var(--powerline-mode-fg);
     background: var(--powerline-visual-bg);
 }
- .statusbar-item#vscodevim\.vim[aria-label="-- NORMAL --"]:before {
+.statusbar-item#vscodevim\.vim[aria-label="-- NORMAL --"]:before {
     content: "NORMAL";
     font-size: 12px;
 }
@@ -427,6 +430,9 @@ footer.statusbar {
     content: "V-BLOCK";
     font-size: 12px;
 }
+
+/* More VSCodeVim */
+
 .statusbar-item.left.first-visible-item,
 .statusbar-item.right:not([aria-hidden]):not([aria-label=""]) ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]) {
     color: var(--powerline-second-segment-fg);
