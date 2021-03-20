@@ -94,6 +94,10 @@ footer.statusbar {
 .statusbar-item.left > :first-child {
     margin: 0 0 0 -11px !important;
 }
+/* second from left */
+.statusbar-item.left.first-visible-item {
+    margin-right: -1px; /* avoid 1px leak on right if only 2 items are visible */
+}
 /* first from right */
 .statusbar-item.right:not([aria-hidden]):not([aria-label=""]) {
     padding-right: 5px !important;
@@ -127,7 +131,7 @@ footer.statusbar {
 /* TODO(pcwalton): fix hidden logic */
  .statusbar-item.left.first-visible-item ~ .statusbar-item.left:not(#vscodevim\.vim),
  .statusbar-item.left.first-visible-item ~ .statusbar-item.left:not([aria-label^="-- "]) {
-    margin-left: -22px !important;
+    margin-left: -21px !important;
     padding: 0 22px !important;
 }
 /* third from right */
