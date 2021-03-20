@@ -12,6 +12,8 @@ export function activate(context: vscode.ExtensionContext) {
 
 	context.subscriptions.push(vscode.window.onDidChangeActiveTextEditor(updateStatusBarItem));
 	context.subscriptions.push(vscode.window.onDidChangeTextEditorSelection(updateStatusBarItem));
+	context.subscriptions.push(vscode.window.onDidChangeTextEditorVisibleRanges(
+		updateStatusBarItem));
 	updateStatusBarItem();
 }
 
@@ -25,11 +27,23 @@ function updateStatusBarItem() {
 		return;
 	}
 
-	const pos = editor.selection.start;
-	const percent = "" + Math.round(pos.line / editor.document.lineCount * 100.0) + "% ☰";
-	const line = "" + (pos.line + 1) + "/" + (editor.document.lineCount) + " ㏑";
-	const column = "" + (pos.character + 1);
-	const label = percent + " " + line + " : " + column;
+	const cursorPos = editor.selection.start;
+	const line = "" + (cursorPos.line + 1) + "/" + (editor.document.lineCount) + " ";
+	const column = "" + (cursorPos.character + 1) + " ";
+
+	const visibleRange = editor.visibleRanges[0];
+	const visibleLine = clamp(cursorPos.line, visibleRange.start.line, visibleRange.end.line);
+	const percent = "" + Math.round(visibleLine / editor.document.lineCount * 100.0) + "% ☰";
+
+	const label = percent + " " + line + " " + column;
 	positionStatusBarItem.text = label;
 	positionStatusBarItem.show();
+}
+
+function clamp(x: number, minVal: number, maxVal: number): number {
+	if (x < minVal)
+		return minVal;
+	if (x > maxVal)
+		return maxVal;
+	return x;
 }

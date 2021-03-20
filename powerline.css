@@ -370,6 +370,12 @@ footer.statusbar {
     z-index: 1;
 }
 
+/* Powerline status */
+
+#mimiga-net\.powerline-status.statusbar-item {
+    font-family: system-ui, "MesloLGS NF", sans-serif;
+}
+
 /* VSCodeVim mode indicator */
 
 .statusbar-item#vscodevim\.vim[aria-label^="--"] {
