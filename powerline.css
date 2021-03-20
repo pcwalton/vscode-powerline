@@ -17,6 +17,7 @@ body {
     --powerline-inner-bg: #202020;
     --powerline-inner-bg-hl: #303030;
     --powerline-second-segment-fg: #ffffff;
+    --powerline-second-segment-bg: rgba(0, 0, 0, 0.5);
     --powerline-separator: #303030;
     --powerline-vim-command-line: #ffffff;
     --powerline-mode-weight: bold;
@@ -33,6 +34,7 @@ div.arcticicestudio-nord-visual-studio-code-themes-nord-color-theme-json footer.
     --powerline-inner-bg: #3b4252;
     --powerline-inner-bg-hl: #4c566a;
     --powerline-second-segment-fg: #e5e9f0;
+    --powerline-second-segment-bg: rgba(0, 0, 0, 0.6);
     --powerline-separator: rgba(0, 0, 0, 0.3);
     --powerline-vim-command-line: #eceff4;
     --powerline-mode-weight: bold;
@@ -51,6 +53,7 @@ div.quandinh-onehalf-dark-themes-onehalf-dark-color-theme-json footer.statusbar 
     --powerline-inner-bg-hl: #3E4452;
     --powerline-mode-weight: bold;
     --powerline-second-segment-fg: #dcdfe4;
+    --powerline-second-segment-bg: rgba(0, 0, 0, 0.5);
     --powerline-separator: rgba(0, 0, 0, 0.25);
     --powerline-vim-command-line: #dcdfe4;
 }
@@ -67,6 +70,7 @@ div.vscode-theme-solarized-dark-themes-solarized-dark-color-theme-json footer.st
     --powerline-visual-bg: #859900;
     --powerline-mode-weight: bold;
     --powerline-second-segment-fg: rgba(255, 255, 255, 0.5);
+    --powerline-second-segment-bg: rgba(0, 0, 0, 0.5);
     --powerline-separator: #586e75;
     --powerline-vim-command-line: #eee8d5;
 }
@@ -159,9 +163,9 @@ footer.statusbar {
     right: 22px;
     box-sizing: border-box;
     border-left: solid transparent 11px;
-    border-top: solid rgba(0, 0, 0, 0.5) 12px;
-    border-right: solid rgba(0, 0, 0, 0.5) 11px;
-    border-bottom: solid rgba(0, 0, 0, 0.5) 12px;
+    border-top: solid var(--powerline-second-segment-bg) 12px;
+    border-right: solid var(--powerline-second-segment-bg) 11px;
+    border-bottom: solid var(--powerline-second-segment-bg) 12px;
 }
 /* second from right: right triangle */
 .statusbar-item.right:not([aria-hidden]):not([aria-label=""]) ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]):before {
@@ -172,10 +176,10 @@ footer.statusbar {
     height: 22px;
     left: 22px;
     box-sizing: border-box;
-    border-left: solid rgba(0, 0, 0, 0.5) 11px;
-    border-top: solid rgba(0, 0, 0, 0.5) 12px;
+    border-left: solid var(--powerline-second-segment-bg) 11px;
+    border-top: solid var(--powerline-second-segment-bg) 12px;
     border-right: solid transparent 11px;
-    border-bottom: solid rgba(0, 0, 0, 0.5) 12px;    /* 12px avoids a rounding error??? */
+    border-bottom: solid var(--powerline-second-segment-bg) 12px;    /* 12px avoids a rounding error??? */
 }
 /* second from left: right triangle */
 .statusbar-item.left.first-visible-item:after {
@@ -186,7 +190,7 @@ footer.statusbar {
     height: 22px;
     width: 22px;
     box-sizing: border-box;
-    border-left: solid rgba(0, 0, 0, 0.5) 11px;
+    border-left: solid var(--powerline-second-segment-bg) 11px;
     border-top: solid transparent 12px;
     border-right: solid transparent 11px;
     border-bottom: solid transparent 12px;
@@ -202,7 +206,7 @@ footer.statusbar {
     box-sizing: border-box;
     border-left: solid transparent 11px;
     border-top: solid transparent 12px;
-    border-right: solid rgba(0, 0, 0, 0.5) 11px;
+    border-right: solid var(--powerline-second-segment-bg) 11px;
     border-bottom: solid transparent 12px;
 }
 /* third from left: left triangle */
