@@ -96,11 +96,11 @@ footer.statusbar {
 }
 /* second from left and on */
 .statusbar-item.left > :first-child {
-    margin: 0 0 0 -11px !important;
+    margin: 0 0 0 -10px !important;
 }
 /* second from left */
 .statusbar-item.left.first-visible-item {
-    margin-right: -1px; /* avoid 1px leak on right if only 2 items are visible */
+    margin-right: -2px; /* avoid 1px leak on right if only 2 items are visible */
 }
 /* first from right */
 .statusbar-item.right:not([aria-hidden]):not([aria-label=""]) {
@@ -112,7 +112,7 @@ footer.statusbar {
 }
 /* second from right */
 .statusbar-item.right:not([aria-hidden]):not([aria-label=""]) ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]) > :first-child {
-    margin: 0 -11px 0 0 !important; /* -10px instead of -11px to fix rounding error */
+    margin: 0 -11px 0 0 !important;
 }
 /* third from right and on */
 .statusbar-item.right:not([aria-hidden]):not([aria-label=""]) ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]) ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]) > :first-child {
@@ -140,7 +140,7 @@ footer.statusbar {
 }
 /* third from right */
  .statusbar-item.right:not([aria-hidden]):not([aria-label=""]) ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]) ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]) {
-    margin-right: -22px !important;
+    margin-right: -23px !important;
     padding: 0 22px !important;
 }
 /* fourth from left */
