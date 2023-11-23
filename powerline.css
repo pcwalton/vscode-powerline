@@ -77,6 +77,7 @@ div.vscode-theme-solarized-dark-themes-solarized-dark-color-theme-json footer.st
 
 /* Main styles */
 .statusbar-item.remote-kind {
+    color: inherit !important;
     background-color: transparent !important;
 }
 .monaco-workbench .part.statusbar>.items-container>.statusbar-item.remote-kind a:hover:not(.disabled) {
