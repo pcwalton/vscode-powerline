@@ -108,6 +108,7 @@ footer.statusbar {
 /* second from left */
 .statusbar-item.left.first-visible-item {
     margin-right: -2px; /* avoid 1px leak on right if only 2 items are visible */
+    background-color: transparent !important;
 }
 /* first from right */
 .statusbar-item.right:not([aria-hidden]):not([aria-label=""]) {
