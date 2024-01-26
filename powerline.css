@@ -76,6 +76,13 @@ div.vscode-theme-solarized-dark-themes-solarized-dark-color-theme-json footer.st
 }
 
 /* Main styles */
+.statusbar-item.remote-kind {
+    color: inherit !important;
+    background-color: transparent !important;
+}
+.monaco-workbench .part.statusbar>.items-container>.statusbar-item.remote-kind a:hover:not(.disabled) {
+    background-color: transparent !important;
+}
 
 footer.statusbar {
     background-color: var(--powerline-normal-bg) !important;
@@ -101,6 +108,7 @@ footer.statusbar {
 /* second from left */
 .statusbar-item.left.first-visible-item {
     margin-right: -2px; /* avoid 1px leak on right if only 2 items are visible */
+    background-color: transparent !important;
 }
 /* first from right */
 .statusbar-item.right:not([aria-hidden]):not([aria-label=""]) {
@@ -325,7 +333,7 @@ footer.statusbar {
 .statusbar-item.left.first-visible-item ~ .statusbar-item.left:not(#vscodevim\.vim\.primary) a,
 .statusbar-item.left.first-visible-item ~ .statusbar-item.left:not([aria-label^="-- "]) a,
 .statusbar-item.right:not([aria-hidden]):not([aria-label=""]) ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]) ~ .statusbar-item.right:not([aria-hidden]):not([aria-label=""]) a {
-    background-color: var(--powerline-inner-bg);
+    background-color: var(--powerline-inner-bg) !important;
     background-image: none;
 }
 /* fourth from left: left arrow */
