@@ -378,6 +378,14 @@ footer.statusbar {
     z-index: 1;
 }
 
+/*
+ * If the status bar is too small, clip to the right instead of overflowing.
+ * This isn't great, but it's better than letting the background color leak out.
+ */
+.right-items {
+    flex-wrap: nowrap !important;
+}
+
 /* Powerline status */
 
 #mimiga-net\.powerline-status.statusbar-item {
